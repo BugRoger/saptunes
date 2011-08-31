@@ -2,7 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'sqlite3'
+gem 'mongo_mapper' , '~> 0.9.1'
+gem 'bson_ext'
 
 gem 'haml-rails'
 gem 'jquery-rails'
