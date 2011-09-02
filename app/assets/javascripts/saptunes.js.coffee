@@ -25,7 +25,7 @@ class SAPTunes.LibraryRouter extends Backbone.Router
 
   albums: ->
     console.log "Displaying Library in Albums Mode"
-    $content = $('.content')
+    $content = $('.main')
     $content.empty
     $content.append @albumLibraryView.render().el
     

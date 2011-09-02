@@ -6,18 +6,4 @@
     = javascript_include_tag :application
     = csrf_meta_tags
   %body
-    .topbar-wrapper(style="z-index: 5;")
-    .topbar
-      .fill
-        .container
-          %h3 
-            %a(href="#")SAPTunes 
-          %ul
-            %li.active
-              %a(href="albums")Albums
-            %li
-              %a(href="artists")Artists
-            %li
-              %a(href="songs")Songs
-    .container
-      = yield
+    = yield

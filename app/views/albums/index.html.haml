@@ -1,5 +1,25 @@
-%section.library
-  .content 
+.container
+  .topbar-wrapper(style="z-index: 5;")
+  .topbar
+    .fill
+      .container
+        %h3 
+          %a(href="#")SAPTunes 
+        %ul
+          %li.active
+            %a(href="albums")Albums
+          %li
+            %a(href="artists")Artists
+          %li
+            %a(href="songs")Songs
+
+  .row 
+    %section.main.span12.columns
+    %section.detail.span4.columns
+      .page-header
+        %h1 Player 
+      .page-header
+        %h1 Playlist
 
 %script#album-template{type: "text/html"}
   %img{src: "/images/{{cover}}"}
