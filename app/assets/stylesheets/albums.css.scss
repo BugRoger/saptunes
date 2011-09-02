@@ -1,0 +1,53 @@
+@import "bootstrap/bootstrap.scss";
+
+.library {
+  padding: 80px 0 0 0;
+}
+
+.album-list {
+  list-style: none;
+  margin: 40px 0 0 0;
+
+  .album {
+    position: relative;
+
+    width: 160px;
+    float: left;
+    padding: 0 20px 20px 0;
+    
+    span {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .album-title {
+      color: $black;
+      font-weight: bold;
+    }
+
+    a.btn {
+      position: absolute;
+      top: 125px;
+      left: 30%;
+      display: none; 
+    }
+
+    &:hover {
+      a.btn {
+        display: inline;
+      }
+    }
+  }
+    
+  img {
+    @include box-shadow;
+
+    width: 160px;
+    height: 160px;
+
+    border: 1px solid $gray;
+  }
+}

@@ -6,4 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./vendor/underscore
+//= require ./vendor/json2
+//= require ./vendor/backbone
+//= require saptunes
 //= require_tree .
+
