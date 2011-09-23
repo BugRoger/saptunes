@@ -1,14 +1,63 @@
 @import "bootstrap/bootstrap.scss";
 
 .main, .detail {
-  padding: 80px 0 0 0;
+  margin-top: 80px;
 }
 
+.detail {
+  background: image-url("player_bg.png");
+
+  span {
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  ul {
+    @include border-radius;
+    @include vertical-three-color-gradient(#222, #111, 80px, #111);
+
+    list-style: none;
+    margin: 0 15px 0 17px;
+    padding: 5px;
+
+    &> li {
+      padding-top: 20px;
+    }
+    
+    &> li:first-child {
+      padding-top: 0;
+    }
+
+    .album-title, .artist-name {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .album-title {
+      color: $white;
+      font-weight: bold;
+    }
+
+    .artist-name {
+      color: $grayLighter;
+    }
+  }
+
+  ol {
+    padding-top: 10px;
+  }
+}
+
+
 .album-list {
+  @include clearfix;
+
   list-style: none;
   margin: 40px 0 0 0;
 
   .album {
+    
     position: relative;
 
     width: 160px;

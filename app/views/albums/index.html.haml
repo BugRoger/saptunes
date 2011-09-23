@@ -14,22 +14,36 @@
             %a(href="songs")Songs
 
   .row 
-    %section.main.span12.columns
-    %section.detail.span4.columns
-      .page-header
-        %h1 Player 
-      .page-header
-        %h1 Playlist
-
-%script#album-template{type: "text/html"}
-  %img{src: "/images/{{cover}}"}
-  %a.btn.primary Add
-  %span.album-title {{title}}
-  %span.artist-name {{artist}}
+    .main.span12.columns
+    .detail.span4.columns
+      %img(src="/assets/dummy.png")
 
 %script#album-library-template{type: "text/html"}
+  ! <img src="/images/<%= cover %>" />
+  %a.btn.primary.add Add
+  %span.album-title <%= title %>
+  %span.artist-name <%= artist %>
+
+%script#album-playlist-template{type: "text/html"}
+  %span.album-title <%= title %>
+  %span.artist-name <%= artist %>
+  %ol.tracks
+    <% _.each(tracks, function(track) { %>
+    %li 
+      %span.track-name <%= track.name %>
+    <% }); %>
+    
+
+%script#library-albums-template{type: "text/html"}
   .page-header
     %h1 
       Albums 
       %small Choose what you want to play and listen as much as you want 
-  %ul.album-library
+
+%script#playlist-template{type: "text/html"}
+  %ul.albums  
+
+%script#player-template{type: "text/html"}
+  .page-header
+    %h1 
+      Player 

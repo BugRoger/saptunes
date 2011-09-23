@@ -1,11 +1,8 @@
 window.SAPTunes = {}
-_.templateSettings = {
-  interpolate :/\{\{(.+?)\}\}/g
-}
-
 
 $(document).ready ->
   window.library = new SAPTunes.Albums
+  window.player  = new SAPTunes.Player
   window.library.fetch()
 
   window.App = new SAPTunes.LibraryRouter
@@ -19,15 +16,25 @@ class SAPTunes.LibraryRouter extends Backbone.Router
   }
 
   initialize: ->
-    @albumLibraryView = new SAPTunes.AlbumLibraryView({
+    @playlistView = new SAPTunes.PlaylistView({
+      player:     window.player,
+      collection: window.player.playlist,
+      library:    window.library
+    })
+
+    @libraryAlbumsView = new SAPTunes.LibraryAlbumsView({
       collection: window.library
     })
 
   albums: ->
-    console.log "Displaying Library in Albums Mode"
-    $content = $('.main')
-    $content.empty
-    $content.append @albumLibraryView.render().el
+    console.log @, "albums"
+    $main = $('.main')
+    $main.empty
+    $main.append @libraryAlbumsView.render().el
+
+    $detail = $('.detail')
+    $detail.empty 
+    $detail.append @playlistView.render().el
     
 
 
